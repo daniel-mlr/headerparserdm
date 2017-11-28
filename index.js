@@ -9,7 +9,7 @@ app.use(useragent.express());
 app.get('/', (req, res) => {
     var lang = req.
     res.send({
-        'ipaddress': req.ip, 
+        'ipaddress': req.host, 
         'langage': req.headers["accept-language"].split(',')[0],
         'software': req.useragent.os
         })
