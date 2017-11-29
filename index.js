@@ -7,9 +7,8 @@ const PORT = process.env.PORT || 5000
 
 app.use(useragent.express());
 app.get('/', (req, res) => {
-    var lang = req.
     res.send({
-        'ipaddress': req.host, 
+        'ipaddress': req.connection.remoteAddress, 
         'langage': req.headers["accept-language"].split(',')[0],
         'software': req.useragent.os
         })
